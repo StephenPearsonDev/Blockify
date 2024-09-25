@@ -1,0 +1,51 @@
+# Eclipse specific files
+/.classpath
+/.project
+/.settings/
+
+# Maven specific files
+/target/
+/pom.xml.tag
+/pom.xml.releaseBackup
+/pom.xml.versionsBackup
+/pom.xml.next
+/release.properties
+/.mvn/timing.properties
+/mvnw
+/mvnw.cmd
+
+# Java specific files
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+
+# IDE specific directories
+/.idea/
+/.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore binary or generated files from builds
+/bin/
+/build/
+
+# Maven wrapper files
+/.mvn/
+
+# Ignore test reports
+/test-output/
+/surefire-reports/
+/failsafe-reports/
+
+# Eclipse local history and temporary files
+/.metadata/
