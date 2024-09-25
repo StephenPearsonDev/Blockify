@@ -2,6 +2,11 @@
 
 **Blockify** is a Java-based puzzle game inspired by the classic game of Tetris. This project is very much a work in progress (WIP), and while it is currently in a playable state, there is a lot of refactoring and feature enhancements needed. This is an old project that I am updating, and it serves as a learning tool for improving game development techniques in Java.
 
+### 🎥 Gameplay Demo
+
+![Gameplay GIF](images/blockify-gameplay.gif)
+
+
 ### ⚠️ Disclaimer
 - **No Copyright Infringement Intended**: This project is **not affiliated with or endorsed by the creators or copyright holders of Tetris**. Blockify is an original project inspired by the gameplay mechanics of Tetris but does not intend to replicate or infringe upon any copyrighted material.
 
