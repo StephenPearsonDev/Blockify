@@ -17,57 +17,29 @@
 
 #### Prerequisites:
 - Java JDK 8 or above
-- Maven for managing dependencies
+- [Maven](https://maven.apache.org/download.cgi) (if you want to build using Maven)
 
-#### Running on Windows:
+#### Running the Project
+
 1. Clone the repository:
     ```bash
     git clone https://github.com/StephenPearsonDev/Blockify.git
     cd Blockify
     ```
 
-2. Build the project using Maven:
+2. If you use **Maven** to manage dependencies and build the project, run:
     ```bash
     mvn clean install
     ```
 
-3. Run the game:
+   Otherwise, you can compile the project using the `javac` command:
     ```bash
-    java -jar target/blockify-1.0-SNAPSHOT.jar
-    ```
-
-#### Running on macOS:
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/StephenPearsonDev/Blockify.git
-    cd Blockify
-    ```
-
-2. Build the project using Maven:
-    ```bash
-    mvn clean install
+    javac -d target src/main/java/dev/stephenpearson/blockify/main/*.java
     ```
 
 3. Run the game:
     ```bash
-    java -jar target/blockify-1.0-SNAPSHOT.jar
-    ```
-
-#### Running on Linux:
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/StephenPearsonDev/Blockify.git
-    cd Blockify
-    ```
-
-2. Build the project using Maven:
-    ```bash
-    mvn clean install
-    ```
-
-3. Run the game:
-    ```bash
-    java -jar target/blockify-1.0-SNAPSHOT.jar
+    java -cp target dev.stephenpearson.blockify.main.Main
     ```
 
 ### 🎮 Controls
