@@ -3,19 +3,19 @@ package dev.stephenpearson.blockify.main;
 import java.awt.Point;
 
 public class Tetromino {
-    public Point[] coordinates;
-    public int type;
-    public Point position;
+    private Point[] coordinates;
+    private final int type;
+    private Point position;
 
     public Tetromino(int type, int boardWidth, int bufferZone) {
         this.type = type;
         setShape(type);
         int minY = getMinY();
-        position = new Point(boardWidth / 2 - 1, bufferZone - minY);
+        this.position = new Point(boardWidth / 2 - 1, bufferZone - minY);
     }
 
     private void setShape(int type) {
-        coordinates = getShapeCoordinates(type);
+        this.coordinates = getShapeCoordinates(type);
     }
 
     public static Point[] getShapeCoordinates(int type) {
@@ -71,26 +71,32 @@ public class Tetromino {
     }
 
     public void rotate() {
-        if (type == 3) return; //
+        if (type == 3) return;
         for (Point p : coordinates) {
-            int x = p.x;
-            int y = p.y;
+            int x = p.x, y = p.y;
             p.x = -y;
             p.y = x;
         }
     }
 
     public void rotateBack() {
-        if (type == 3) return; 
+        if (type == 3) return;
         for (Point p : coordinates) {
-            int x = p.x;
-            int y = p.y;
+            int x = p.x, y = p.y;
             p.x = y;
             p.y = -x;
         }
     }
-    
+
     public int getType() {
         return type;
+    }
+
+    public Point[] getCoordinates() {
+        return coordinates;
+    }
+
+    public Point getPosition() {
+        return position;
     }
 }

@@ -39,11 +39,11 @@ public class Board {
 
 
     public void fixPiece(Tetromino piece) {
-        for (Point p : piece.coordinates) {
-            int x = piece.position.x + p.x;
-            int y = piece.position.y + p.y;
+        for (Point p : piece.getCoordinates()) {
+            int x = piece.getPosition().x + p.x;
+            int y = piece.getPosition().y + p.y;
             if (x >= 0 && x < width && y >= 0 && y < height) {
-                grid[y][x] = piece.type + 1;
+                grid[y][x] = piece.getType() + 1;
             }
         }
     }

@@ -1,27 +1,31 @@
 package dev.stephenpearson.blockify.main;
 
-import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentAdapter;
-import dev.stephenpearson.blockify.view.GamePanel;
+import java.awt.event.ComponentEvent;
+
 import dev.stephenpearson.blockify.constants.GameConstants;
+import dev.stephenpearson.blockify.model.GameModel;
+import dev.stephenpearson.blockify.view.GamePanel;
 
 public class WindowResizeListener extends ComponentAdapter {
+    private final GameModel gameModel;
     private final GamePanel gamePanel;
 
-    public WindowResizeListener(GamePanel gamePanel) {
+    public WindowResizeListener(GamePanel gamePanel, GameModel gameModel) {
         this.gamePanel = gamePanel;
+        this.gameModel = gameModel;
     }
 
     @Override
     public void componentResized(ComponentEvent e) {
         int newWidth = e.getComponent().getWidth();
         int newHeight = e.getComponent().getHeight();
-        double aspectRatio = gamePanel.getAspectRatio();
+        double aspectRatio = gameModel.getAspectRatio();
 
-        if (newWidth < gamePanel.getMinWindowWidth()) newWidth = gamePanel.getMinWindowWidth();
-        if (newWidth > gamePanel.getMaxWindowWidth()) newWidth = gamePanel.getMaxWindowWidth();
-        if (newHeight < gamePanel.getMinWindowHeight()) newHeight = gamePanel.getMinWindowHeight();
-        if (newHeight > gamePanel.getMaxWindowHeight()) newHeight = gamePanel.getMaxWindowHeight();
+        if (newWidth < gameModel.getMinWindowWidth()) newWidth = gameModel.getMinWindowWidth();
+        if (newWidth > gameModel.getMaxWindowWidth()) newWidth = gameModel.getMaxWindowWidth();
+        if (newHeight < gameModel.getMinWindowHeight()) newHeight = gameModel.getMinWindowHeight();
+        if (newHeight > gameModel.getMaxWindowHeight()) newHeight = gameModel.getMaxWindowHeight();
 
         double newAspectRatio = (double) newWidth / newHeight;
         if (Math.abs(newAspectRatio - aspectRatio) > GameConstants.ASPECT_RATIO_TOLERANCE) {
